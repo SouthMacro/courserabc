@@ -32,7 +32,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ availableTimes, initializeTim
 
     useEffect(() => {
         initializeTimes();
-    }, [initializeTimes]);
+    }, []);
 
     const validationSchema = Yup.object().shape({
         firstName: Yup.string().required('First Name is required'),
