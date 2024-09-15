@@ -5,8 +5,7 @@ import './index.css';
 import App from './App';
 import Homepage from './pages/homepage/Homepage';
 import BookingPage from './pages/booking-page/BookingPage';
-import ConfirmedBooking from './pages/confirmed-booking/ConfirmedBooking'; // Убедитесь, что файл переименован
-
+import ConfirmedBooking from './pages/confirmed-booking/ConfirmedBooking';
 const router = createBrowserRouter([
     {
         path: '/',
