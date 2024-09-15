@@ -1,0 +1,41 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import Navbar from '../../components/navbar/Navbar';
+import logo from '../../img/Logo.svg';
+import MobileNavBar from '../../components/mobile-navbar/MobileNavBar';
+
+const Header: React.FC = () => {
+  const [mobileNav, setMobileNav] = useState<boolean>(false);
+
+  const handleNav = () => {
+    setMobileNav(!mobileNav);
+  };
+
+  const showLogin = () => {
+    console.log('Login button clicked');
+  };
+
+  return (
+      <header>
+        <div className="w-full py-3 flex mx-auto items-center justify-center">
+          <div className="w-full md:w-[40%] flex flex-col md:flex-row">
+            <div className="flex items-center justify-between px-2">
+              <Link to="/">
+                <img src={logo} alt="Little lemon logo" className="mr-10" />
+              </Link>
+              <div className="md:hidden" onClick={handleNav}>
+                {mobileNav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
+              </div>
+            </div>
+          </div>
+
+          <Navbar />
+        </div>
+
+        <MobileNavBar isVisible={mobileNav} showLogin={showLogin} />
+      </header>
+  );
+};
+
+export default Header;
